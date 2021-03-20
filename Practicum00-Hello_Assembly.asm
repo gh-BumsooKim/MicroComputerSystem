@@ -1,6 +1,6 @@
 		AREA	HelloW, CODE, READONLY
 SWI_WriteC		EQU	&0
-SWI_Exit			EQU	&11
+SWI_Exit		EQU	&11
 		ENRTY
 START		ADR	r1, TEXT
 LOOP		LDRB	r0, [r1], #1
