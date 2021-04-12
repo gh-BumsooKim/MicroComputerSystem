@@ -4,17 +4,41 @@
 
 ARM MircroProcesser Core Assembly Language with Raspi 4B
 
+## Environment
+
+- **OS** : Raspbian (Raspberry Pi 3)
+- **Compiler** : gcc (Not Keil)
+- **Editor** : nano
+- **language** : ARM Assembly
+
 ```Assembly
-		AREA	HelloW, CODE, READONLY
-SWI_WriteC		EQU	&0
-SWI_Exit		EQU	&11
-		ENRTY
-START		ADR	r1, TEXT
-LOOP		LDRB	r0, [r1], #1
-		CM	r0, #0
-		SWINE	SWI_WriteC
-		BNE	LOOP
-		SWI	SWI_Exit
-TEXT		=	"Hello World",&0a,&0d,0
-		END
+	.data	@data area
+string:	.asciz "Hello world\n"
+
+	.text	@code area
+	.global main
+	
+main:
+	push {lr}	@push {r14}
+	ldr r0, =string	@parameter
+	bl printf
+	pop {pc}	@pop {r15}
+	.end	@end
+```
+
+## Getting Started
+
+make directory and source file
+
+```cmd
+pwd
+mkdir src
+nano example.s
+```
+
+assemble source code and run
+
+```cmd
+gcc example.s -o example
+./exmaple
 ```
