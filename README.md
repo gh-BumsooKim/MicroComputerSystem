@@ -4,6 +4,8 @@
 
 ARM MircroProcesser Core Assembly Language with Raspi 4B
 
+# ARM Programming
+
 ## Environment
 
 - **OS** : Raspbian (Raspberry Pi 3)
@@ -42,3 +44,52 @@ assemble source code and run
 gcc example.s -o example
 ./exmaple
 ```
+
+<hr>
+
+# GPIO Programming
+
+## Environment
+
+- **OS** : Raspbian (Raspberry Pi 3)
+- **Compiler** : gcc (Not Keil)
+- **Editor** : nano
+- **language** : C
+
+```c
+#include <stdio.h>
+#incldue <wiringPi.h>
+
+#define LED 18
+
+void main(void){
+	wiringPiSetupGpio();
+	pinMode(LED, OUTPUT);
+	
+	for(;;){
+		digitalWrite(LED, 1);
+		delay(500);
+		digitalWrite(LED, 0);
+		delay(500);
+	}
+}
+
+```
+
+## Getting Started
+
+install WiringPi
+
+```cmd
+sudo apt-get install git-core
+git clone http://github.com/WiringPi/WiringPi
+cd WiringPi
+./build
+```
+
+compile c source code and run
+
+```cmd
+nano example.c
+gcc -o example example.c -lwiringPi
+./exmaple
