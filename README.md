@@ -58,7 +58,7 @@ gcc example.s -o example
 
 ```c
 #include <stdio.h>
-#incldue <wiringPi.h>
+#include <wiringPi.h>
 
 #define LED 18
 
