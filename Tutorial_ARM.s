@@ -1,4 +1,5 @@
 @START - Data Area
+@ Declare Variable
 
 	.data
 string:	.asciz "Hello world\n"
@@ -7,9 +8,13 @@ string:	.asciz "Hello world\n"
 
 
 @START - Code Area
+@ External Function
+
 	.text
 	.global main
 	.extern printf
+	
+@ Main Logic Function 
 
 main:
 	push {lr}	@push {r14}
