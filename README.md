@@ -78,6 +78,8 @@ void main(void){
 
 ## Getting Started
 
+### (High Level) Peripheral Device Controll with wiringPi
+
 install WiringPi
 
 ```cmd
@@ -92,4 +94,26 @@ compile c source code and run
 ```cmd
 nano example.c
 gcc -o example example.c -lwiringPi
-./exmaple
+./example
+```
+
+### (Low Level) Peripheral Device Controll with mmap 
+
+compile custom wiringPi to library file
+
+```cmd
+nano gpmmlib.c
+gcc -I./include -c gpmmlib.c
+ar r libgpmm.a gpmmlib.o
+ranlib libgpmm.a
+mkdir lib
+mv libgpmm.a ./lib
+```
+
+compile c source with custom library
+
+```cmd
+nano example.c
+gcc -I./include -L./lib -o example example.c -lgpmm
+sudo ./example 
+```
