@@ -75,6 +75,12 @@ void main(void){
 }
 
 ```
+```cmd
+gpio -g mode [N] out
+gpio -g write [N] 1
+gpio -g write [N] 0
+```
+
 
 ## Getting Started
 
