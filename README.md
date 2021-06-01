@@ -2,7 +2,18 @@
 
 **중앙대학교 창의ICT공과대학 전자전기공학부 - 마이크로컴퓨터시스템**
 
-ARM MircroProcesser Core Assembly Language with Raspi 4B
+ARM MircroProcesser Core Assembly Language with Raspi 3
+<br>
+
+<br>
+<p align="center">
+<img src="imgs/mmap_switch_led.gif">
+</p>
+
+**Peripheral Device Control using Linux Kernel System Call with Virtual Memory Mapping**
+<br>[BumSoo Kim](https://github.com/gh-BumsooKim)\*
+<br>In 2021 MicroComputerSystem Lecture, CAU (* CAU A&T)
+
 
 # ARM Programming
 
